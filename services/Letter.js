@@ -36,12 +36,12 @@ class Letter {
             let amount = 0
 
             if (body.consultation_type === 'phone') {
-                amount = 10000
+                amount = 1
                 formData.append('amount', amount) //10k
                 formData.append('postLink', 'https://youtube.com')
             }
             else if (body.consultation_type === 'mail') {
-                amount = 5000
+                amount = 1
                 formData.append('amount', amount) //5k
                 formData.append('postLink', 'https://youtube.com')
             }
