@@ -4,24 +4,21 @@ import { emailsLetterVariants } from '../utils.js'
 class MailService {
     constructor() {
         this.trasporter = nodemailer.createTransport({
-            host: "smtp.gmail.com",
-            port: 465,
-            secure: true,
+            service: 'gmail',
             auth: {
-                user: "glavbux97@gmail.com",
-                pass: "58133dommasik",
+                user: 'glavbux97@gmail.com',
+                pass: 'xxjksdomsiykxqxp'
             }
         })
     }
 
-    async send(type, body,file) {
-        console.log('to,body', type, body,file)
+    async send(type, body, file) {
         await this.trasporter.sendMail({
-            from: 'glavbux97@gmail.com',
+            from: 'nodemailer',
             to: 'lga-9797@mail.ru',
             text: '',
             subject: body['title'],
-            html: emailsLetterVariants(type, body,file)
+            html: emailsLetterVariants(type, body, file)
         })
     }
 }

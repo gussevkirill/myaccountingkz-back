@@ -1,5 +1,4 @@
 export const emailsLetterVariants = (type, body, file) => {
-    console.log('body', body)
     switch (type) {
         case 'letter':
             return `
