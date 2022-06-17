@@ -14,7 +14,6 @@ const PORT = 3001
 
 app.use(cors(
     {
-        // origin: 'http://myaccounting97.ru'
         origin: process.env.SITE_URL
     }
 ))

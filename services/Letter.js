@@ -35,18 +35,17 @@ class Letter {
             formData.append('invoiceID', invoiceID)
             formData.append('currency', 'KZT')
             formData.append('terminal', '3ad196d0-0812-4866-9499-a7ed7d78bef3')
+            formData.append('postLink', `${process.env.SITE_URL}/check_pay`)
 
             let amount = 0
 
             if (body.consultation_type === 'phone') {
                 amount = 1
                 formData.append('amount', amount) //10k
-                formData.append('postLink', 'https://youtube.com')
             }
             else if (body.consultation_type === 'mail') {
                 amount = 1
                 formData.append('amount', amount) //5k
-                formData.append('postLink', 'https://youtube.com')
             }
 
 
@@ -58,7 +57,7 @@ class Letter {
                 invoiceId: invoiceID,
                 backLink: "https://yandex.ru",
                 failureBackLink: "https://youtube.com",
-                postLink: "http://myaccounting97.ru:3001/check_pay",
+                postLink: `${process.env.SITE_URL}/check_pay`,
                 language: "RU",
                 description: "Оплата услуги",
                 accountId: Math.random(),
