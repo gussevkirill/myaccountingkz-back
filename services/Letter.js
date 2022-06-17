@@ -7,6 +7,9 @@ import { v4 } from 'uuid'
 
 
 class Letter {
+
+    letterFields = {}
+
     async create(body, file) {
         try {
 
@@ -46,6 +49,9 @@ class Letter {
                 formData.append('postLink', 'https://youtube.com')
             }
 
+
+            this.letterFields = { ...body, fileName }
+
             const { data: token } = await axios.post('https://epay-oauth.homebank.kz/oauth2/token', formData)
 
             const link = halyk.pay({
@@ -62,8 +68,8 @@ class Letter {
                 cardSave: false,
                 auth: token
             })
-
             return { link }
+
         } catch (error) {
             console.log('error', error)
             return {

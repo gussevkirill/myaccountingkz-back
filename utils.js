@@ -26,7 +26,7 @@ export const emailsLetterVariants = (type, body, file) => {
                 <li style="list-style:none">Вн.номер : <span>${body['number']}</span></li>
                 <li style="list-style:none">Тема вопроса : <span>${body['question']}</span></li>
                 ${body?.text ? `<li style="list-style:none">Текст вопроса : <span>${body['text']}</span></li>` : ''}
-                ${file ? `<li style="list-style:none">Файл : <span><a href="http://localhost:3001/download/${file}" download>Скачать файл</a> </span></li>` : ''}
+                ${file ? `<li style="list-style:none">Файл : <span><a href="${proccess.env.SITE_URL}/download/${file}" download>Скачать файл</a> </span></li>` : ''}
             </ul>
             `
         case 'review':

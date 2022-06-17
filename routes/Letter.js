@@ -8,9 +8,9 @@ const router = Router()
 
 
 router.post('/letters', LetterController.create)
-router.post('/check_pay', (req, res) => {
-    console.log('req.body', req.body)
-})  
+// router.get('/check_pay', (req, res) => {
+//     console.log('req.body', req.body)
+// })  
 
 
 export default router
