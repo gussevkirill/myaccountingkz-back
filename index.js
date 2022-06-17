@@ -5,6 +5,9 @@ import fileUpload from 'express-fileupload'
 import path from 'path'
 import { LetterService } from './services/Letter.js'
 import mailService from './services/Mail.js'
+import { config } from 'dotenv'
+
+config()
 const app = express()
 
 const PORT = 3001
@@ -16,13 +19,15 @@ app.use(cors(
     }
 ))
 
+console.log('process.env.SITE_URL', process.env.SITE_URL)
+
 app.use('/check_pay', async (req, res, next) => {
     console.log('req', req.body)
     console.log('first', LetterService.letterFields)
 
     if (!req.body) return res.send({ Error: 'fail' })
     const { code } = req.body
-    const { message, fileName,...fields } = LetterService.letterFields
+    const { message, fileName, ...fields } = LetterService.letterFields
     if (code === 'ok') {
         await mailService.send(message, fields, fileName)
         return
