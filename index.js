@@ -18,8 +18,6 @@ app.use(cors(
     }
 ))
 
-console.log('process.env.SITE_URL', process.env.SITE_URL)
-
 app.use('/check_pay', async (req, res, next) => {
     console.log('req', req.body)
     console.log('first', LetterService.letterFields)

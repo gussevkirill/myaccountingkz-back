@@ -2,7 +2,6 @@ import mailService from './Mail.js'
 import path from 'path'
 import { halyk } from '../halyk.js'
 import axios from 'axios'
-import FormData from 'form-data'
 import { v4 } from 'uuid'
 
 
@@ -70,7 +69,6 @@ class Letter {
             return { link }
 
         } catch (error) {
-            console.log('error', error)
             return {
                 error
             }
