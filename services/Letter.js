@@ -52,7 +52,7 @@ class Letter {
                 invoiceId: invoiceID,
                 backLink: "https://yandex.ru",
                 failureBackLink: "https://youtube.com",
-                postLink: "http://myaccounting97.ru/",
+                postLink: "http://myaccounting97.ru:3001/check_pay",
                 language: "RU",
                 description: "Оплата услуги",
                 accountId: Math.random(),
