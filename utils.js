@@ -23,7 +23,6 @@ export const emailsLetterVariants = (type, body, file) => {
                 <li style="list-style:none">Электронная почта : <span>${body['email']}</span></li>
                 <li style="list-style:none">Номер телефона : <span>${body['phone']}</span></li>
                 <li style="list-style:none">Номер городского телеофна : <span>${body['home_phone']}</span></li>
-                <li style="list-style:none">Вн.номер : <span>${body['number']}</span></li>
                 <li style="list-style:none">Тема вопроса : <span>${body['question']}</span></li>
                 ${body?.text ? `<li style="list-style:none">Текст вопроса : <span>${body['text']}</span></li>` : ''}
                 ${file ? `<li style="list-style:none">Файл : <span><a href="${proccess.env.BACKAND_URL}/download/${file}" download>Скачать файл</a> </span></li>` : ''}

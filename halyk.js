@@ -135,3 +135,4 @@ halyk.p2p = p2p;
     halyk.showPaymentWidget = showPaymentWidget;
 
 })(halyk || (halyk = {}));
+
