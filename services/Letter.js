@@ -39,11 +39,11 @@ class Letter {
             let amount = 0
 
             if (body.consultation_type === 'phone') {
-                amount = 1
+                amount = 10000
                 formData.append('amount', amount) //10k
             }
             else if (body.consultation_type === 'mail') {
-                amount = 1
+                amount = 5000
                 formData.append('amount', amount) //5k
             }
 
@@ -54,8 +54,8 @@ class Letter {
 
             const link = halyk.pay({
                 invoiceId: invoiceID,
-                backLink: "https://yandex.ru",
-                failureBackLink: "https://youtube.com",
+                backLink: "http://myaccounting97.ru",
+                failureBackLink: "http://myaccounting97.ru",
                 postLink: `${process.env.SITE_URL}/check_pay`,
                 language: "RU",
                 description: "Оплата услуги",

@@ -18,8 +18,6 @@ app.use(cors(
     }
 ))
 
-console.log('first', process.env.SITE_URL)
-
 app.use('/check_pay', async (req, res, next) => {
     console.log('req', req.body)
     console.log('first', LetterService.letterFields)
@@ -33,6 +31,7 @@ app.use('/check_pay', async (req, res, next) => {
         await mailService.send(message, fields, fileName)
         return
     }
+    
     next()
 })
 
