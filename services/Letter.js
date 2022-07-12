@@ -56,7 +56,7 @@ class Letter {
                 invoiceId: invoiceID,
                 backLink: "http://myaccounting97.ru",
                 failureBackLink: "http://myaccounting97.ru",
-                postLink: `${process.env.SITE_URL}/check_pay`,
+                postLink: `${process.env.BACKAND_URL}/check_pay`,
                 language: "RU",
                 description: "Оплата услуги",
                 accountId: Math.random(),
