@@ -34,12 +34,12 @@ class Letter {
             formData.append('invoiceID', invoiceID)
             formData.append('currency', 'KZT')
             formData.append('terminal', '3ad196d0-0812-4866-9499-a7ed7d78bef3')
-            formData.append('postLink', `${process.env.SITE_URL}/check_pay`)
+            formData.append('postLink', `${process.env.BACKAND_URL}/check_pay`)
 
             let amount = 0
 
             if (body.consultation_type === 'phone') {
-                amount = 10000
+                amount = 1
                 formData.append('amount', amount) //10k
             }
             else if (body.consultation_type === 'mail') {
