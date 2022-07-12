@@ -19,7 +19,7 @@ app.use(cors(
 ))
 
 app.use('/check_pay', async (req, res, next) => {
-    console.log('req', req.body)
+    console.log('req', req,req.body)
     console.log('first', LetterService.letterFields)
 
     if (!req.body) return res.send({ Error: 'fail' })
