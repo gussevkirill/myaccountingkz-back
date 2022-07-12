@@ -26,7 +26,7 @@ class Letter {
             }
 
             const formData = new URLSearchParams()
-            const invoiceID = v4().slice(0, 11)
+            const invoiceID = v4().replace(/\D/g,'').slice(0, 11)
             formData.append('grant_type', 'client_credentials')
             formData.append('scope', 'webapi usermanagement email_send verification statement statistics payment')
             formData.append('client_id', 'MYACCOUNTING97.RU')
