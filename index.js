@@ -18,28 +18,28 @@ app.use(cors(
     }
 ))
 
+app.use(express.json())
+app.use(fileUpload())
+app.use(express.static(`static`))
+app.use(lettersRouter)
+
 app.use('/check_pay', async (req, res, next) => {
-    console.log('req', req,req.body,req.params,)
+    console.log('req', req, req.body, req.params,)
     console.log('first', LetterService.letterFields)
 
     if (!req.body) return res.send({ Error: 'fail' })
-    const { code } = req.body  
-    
+    const { code } = req.body
+
     const { message, fileName, ...fields } = LetterService.letterFields
 
     if (code === 'ok') {
         await mailService.send(message, fields, fileName)
         return
     }
-    
+
     next()
 })
 
-
-app.use(express.json())
-app.use(fileUpload())
-app.use(express.static(`static`))
-app.use(lettersRouter)
 
 app.use('/download/:fileName', (req, res) => {
     res.download(`${path.resolve()}/static/${req.params.fileName}`)
